@@ -199,7 +199,7 @@ proc bundleChecksums(latest: bool) =
   # vendor Nim (nimbus-eth1/eth2, nimbos) do pass `--skipUserCfg --skipParentCfg`
   # to `koch boot`, but `nimCompileFold` spawns a fresh `nim c` that would
   # otherwise inherit the ambient configuration.
-  const nifOptions = "-d:release --noNimblePath --skipUserCfg --skipParentCfg"
+  const nifOptions = "-d:release --noNimblePath --skipUserCfg --skipParentCfg --passl:-static"
 
   # Rebuilding these only when the binary is ABSENT silently keeps the tools of
   # the PREVIOUS pin: bump `NimonyStableCommit` in a checkout that already has
